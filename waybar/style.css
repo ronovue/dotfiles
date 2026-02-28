@@ -1,0 +1,89 @@
+* {
+  font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 0;
+  min-width: 0;
+}
+
+window#waybar {
+ background: rgba(15, 15, 20, 0.75);
+    border: none;
+   
+  box-shadow: none;
+  transition: background-color 0.3s ease;
+}
+
+/* ── Workspaces ─────────────────────────────── */
+#workspaces button {
+  padding: 0.25rem 0.6rem;
+  margin: 0.3rem 0.25rem;
+  border-radius: 6px;
+  background: rgba(30, 30, 40, 0.6);
+  border: none;
+  color: #bbbbbb;
+}
+
+#workspaces button:hover {
+ background: rgba(120, 40, 160, 0.3);
+border: 1px solid #cccccc;
+  color: #e0c3ff;
+}
+
+#workspaces button.active {
+  background: linear-gradient(45deg, #b4283c, #5a1e78);
+  color: #ffffff;
+}
+
+#workspaces button.urgent {
+  background: #b4283c;
+  color: #ffffff;
+}
+
+/* ── Modules ─────────────────────────────────── */
+#clock,
+#pulseaudio,
+#backlight,
+#battery,
+#network,
+#tray,
+#window,
+#custom-power {
+  padding: 0.25rem 0.6rem;
+  margin: 0.3rem 0.25rem;
+  border-radius: 6px;
+  background: rgba(30, 30, 40, 0.6);
+  color: #cccccc;
+}
+
+#clock:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#battery:hover,
+#network:hover {
+  background: rgba(120, 40, 160, 0.3);
+  color: #ffffff;
+}
+
+/* ── Power Button ───────────────────────────── */
+#custom-power {
+  background: rgba(30, 30, 40, 0.6);
+  color: #ff6b6b;
+}
+
+#custom-power:hover {
+  background: #b4283c;
+  color: #ffffff;
+}
+
+/* ── Tooltip ─────────────────────────────────── */
+tooltip {
+  background: rgba(20, 20, 25, 0.95);
+  border: 1px solid #5a1e78;
+  border-radius: 6px;
+  color: #ffffff;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
