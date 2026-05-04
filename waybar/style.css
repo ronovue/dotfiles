@@ -7,10 +7,8 @@
 }
 
 window#waybar {
- background: rgba(15, 15, 20, 0.75);
+   background: rgba(10, 15, 20, 0.75);
     border: none;
-   
-  box-shadow: none;
   transition: background-color 0.3s ease;
 }
 
@@ -19,25 +17,25 @@ window#waybar {
   padding: 0.25rem 0.6rem;
   margin: 0.3rem 0.25rem;
   border-radius: 6px;
-  background: rgba(30, 30, 40, 0.6);
-  border: none;
-  color: #bbbbbb;
+  border: none; 
+  background: rgba(20, 30, 40, 0.6);
+  color: #8aaec0;
 }
 
 #workspaces button:hover {
- background: rgba(120, 40, 160, 0.3);
-border: 1px solid #cccccc;
-  color: #e0c3ff;
+  background: rgba(0, 200, 220, 0.2);
+  border: 1px solid #00c8dc;
+  color: #c8f9ff;
 }
 
 #workspaces button.active {
-  background: linear-gradient(45deg, #b4283c, #5a1e78);
+  background: linear-gradient(45deg, #00d4ff, #007bff);
   color: #ffffff;
 }
 
 #workspaces button.urgent {
-  background: #b4283c;
-  color: #ffffff;
+   background: #00c8dc;
+  color: #001418;
 }
 
 /* ── Modules ─────────────────────────────────── */
@@ -52,8 +50,8 @@ border: 1px solid #cccccc;
   padding: 0.25rem 0.6rem;
   margin: 0.3rem 0.25rem;
   border-radius: 6px;
-  background: rgba(30, 30, 40, 0.6);
-  color: #cccccc;
+  background: rgba(20, 30, 40, 0.6);
+  color: #9fc9d8;
 }
 
 #clock:hover,
@@ -61,27 +59,27 @@ border: 1px solid #cccccc;
 #backlight:hover,
 #battery:hover,
 #network:hover {
-  background: rgba(120, 40, 160, 0.3);
-  color: #ffffff;
+  background: rgba(0, 200, 220, 0.2);
+  color: #e6fcff;
 }
 
 /* ── Power Button ───────────────────────────── */
 #custom-power {
-  background: rgba(30, 30, 40, 0.6);
-  color: #ff6b6b;
+   background: rgba(20, 30, 40, 0.6);
+    color: #00eaff;
 }
 
 #custom-power:hover {
-  background: #b4283c;
+  background: #007bff;
   color: #ffffff;
 }
 
 /* ── Tooltip ─────────────────────────────────── */
 tooltip {
-  background: rgba(20, 20, 25, 0.95);
-  border: 1px solid #5a1e78;
+  background: rgba(10, 15, 20, 0.95);
+  border: 1px solid #00c8dc;
+  color: #e6fcff;
   border-radius: 6px;
-  color: #ffffff;
 }
 
 window#waybar.empty #window {
