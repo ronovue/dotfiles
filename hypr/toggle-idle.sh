@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if pgrep hypridle > /dev/null; then
     pkill hypridle
