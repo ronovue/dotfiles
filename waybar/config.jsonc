@@ -48,7 +48,7 @@
   "format": "{icon} {capacity}%",
   "format-charging": "󰂄 {capacity}%",
   "format-plugged": "󰂄 {capacity}%",
-  "format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁾"]
+  "format-icons": ["󰂎","󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"]
 },
   "network": {
     "format-wifi": "  {signalStrength}%",
@@ -69,6 +69,6 @@
                         "reboot": "reboot",
                         "suspend": "systemctl suspend",
                         "hibernate": "systemctl hibernate"
-                },
+                }
   }
 }

@@ -1,23 +1,26 @@
 * {
   font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   min-height: 0;
   min-width: 0;
 }
 
 window#waybar {
-   background: rgba(15, 15, 15, 0.75);
-    border: none;
+  background: rgba(15, 15, 15, 0.75);
+  border: none;
   transition: background-color 0.3s ease;
 }
 
-/* ── Workspaces ─────────────────────────────── */
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
 #workspaces button {
-  padding: 0.25rem 0.6rem;
+  padding: 0.20rem 0.6rem;
   margin: 0.3rem 0.25rem;
   border-radius: 6px;
-  border: none; 
+  border: none;
   background: rgba(40, 40, 40, 0.4);
   color: #bdbdbd;
 }
@@ -38,14 +41,13 @@ window#waybar {
   color: #111111;
 }
 
-/* ── Modules ─────────────────────────────────── */
 #clock,
 #pulseaudio,
 #backlight,
 #battery,
 #network,
-#tray,
 #window,
+#tray,
 #custom-power {
   padding: 0.25rem 0.6rem;
   margin: 0.3rem 0.25rem;
@@ -63,10 +65,23 @@ window#waybar {
   color: #ffffff;
 }
 
-/* ── Power Button ───────────────────────────── */
+#battery.warning {
+  color: #f2c14e;
+}
+
+#battery.critical {
+  color: #e05252;
+  background: rgba(224, 82, 82, 0.15);
+}
+
+#pulseaudio.muted {
+  color: #7a7a7a;
+  background: rgba(40, 40, 40, 0.25);
+}
+
 #custom-power {
-   background: rgba(40, 40, 40, 0.4);
-   color: #e0e0e0;
+  background: rgba(40, 40, 40, 0.4);
+  color: #e0e0e0;
 }
 
 #custom-power:hover {
@@ -74,14 +89,9 @@ window#waybar {
   color: #ffffff;
 }
 
-/* ── Tooltip ─────────────────────────────────── */
 tooltip {
   background: rgba(20, 20, 20, 0.95);
   border: 1px solid #8a8a8a;
   color: #ffffff;
   border-radius: 6px;
-}
-
-window#waybar.empty #window {
-  background-color: transparent;
 }
