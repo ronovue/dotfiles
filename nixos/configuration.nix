@@ -32,7 +32,7 @@
     btop
     playerctl
     pavucontrol
-    lolcat
+    chromium
   ];
   
   programs.hyprland.enable = true;
@@ -40,11 +40,12 @@
   programs.waybar.enable = true;
   programs.thunar.enable = true;
   programs.xfconf.enable = true;
-
+  
   services.blueman.enable = true;
   services.gvfs.enable = true;
   services.tumbler.enable = true;
   services.udisks2.enable = true;
+  services.pipewire.enable = true;
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
@@ -66,18 +67,19 @@
   };
 
   fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    typstPackages.fontawesome_0_6_0
-    openmoji-color
+    ibm-plex    
+    noto-fonts
+    noto-fonts-color-emoji
+    nerd-fonts.symbols-only
   ];
 
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
-      serif = [ "JetBrainsMono Nerd Font" ];
-      sansSerif = [ "JetBrainsMono Nerd Font" ];
-      monospace = [ "JetBrainsMono Nerd Font" ];
-      emoji = [ "Openmoji" ];
+    monospace = [ "IBM Plex Mono" ];
+    sansSerif = [ "IBM Plex Mono" ];
+    serif = [ "IBM Plex Mono" ];
+    emoji = [ "Noto Color Emoji" ];
     };
   };
 
