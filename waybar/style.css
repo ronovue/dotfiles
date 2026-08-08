@@ -1,5 +1,5 @@
 * {
-  font-family: "IBM Plex Mono", "Symbols Nerd Font";
+  font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font";
   font-size: 18px;
   font-weight: 600;
   min-height: 0;
@@ -48,6 +48,7 @@ window#waybar.empty #window {
 #network,
 #window,
 #tray,
+#custom-notification,
 #custom-power {
   padding: 0.25rem 0.6rem;
   margin: 0.3rem 0.25rem;
