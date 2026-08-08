@@ -67,18 +67,18 @@
   };
 
   fonts.packages = with pkgs; [
-    ibm-plex    
-    noto-fonts
+    nerd-fonts.jetbrains-mono
     noto-fonts-color-emoji
     nerd-fonts.symbols-only
+    inter
   ];
 
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
-    monospace = [ "IBM Plex Mono" ];
-    sansSerif = [ "IBM Plex Mono" ];
-    serif = [ "IBM Plex Mono" ];
+    monospace = [ "JetBrainsMono Nerd Font" ];
+    sansSerif = [ "JetBrainsMono Nerd Font" ];
+    serif = [ "JetBrainsMono Nerd Font" ];
     emoji = [ "Noto Color Emoji" ];
     };
   };
