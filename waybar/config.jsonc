@@ -6,15 +6,15 @@
   "fixed-center": true,
   "exclusive": true,
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
-  "modules-center": ["clock"],
-  "modules-right": ["pulseaudio", "backlight", "battery", "network", "tray", "custom/notification", "custom/power"],
+  "modules-center": ["custom/notification", "clock"],
+  "modules-right": ["pulseaudio", "backlight", "battery", "network", "tray", "custom/power"],
 
   "hyprland/workspaces": {
     "on-click": "activate",
     "format": "{id}",
     "all-outputs": true
   },
-
+ 
   "hyprland/window": {
     "format": "{title}"
   },

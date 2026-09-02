@@ -1,5 +1,5 @@
 * {
-  font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font";
+  font-family: "Inter", "Symbols Nerd Font";
   font-size: 18px;
   font-weight: 600;
   min-height: 0;
@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-  background: rgba(15, 15, 15, 0.75);
+  background: rgba(10, 10, 15, 0.8);
   border: none;
   transition: background-color 0.3s ease;
 }
@@ -21,23 +21,22 @@ window#waybar.empty #window {
   margin: 0.3rem 0.25rem;
   border-radius: 6px;
   border: none;
-  background: rgba(40, 40, 40, 0.4);
-  color: #bdbdbd;
+  background: rgba(42, 26, 74, 0.35);
+  color: #8fb8c9;
 }
 
 #workspaces button:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid #d0d0d0;
+  background: rgba(77, 232, 224, 0.12);
+  border: 1px solid rgba(77, 232, 224, 0.5);
   color: #ffffff;
 }
 
 #workspaces button.active {
-  background: linear-gradient(45deg, #d9d9d9, #8a8a8a);
-  color: #111111;
+  background: #8FCDE0;
+  color: #0a0a0f;
 }
-
 #workspaces button.urgent {
-  background: #e0e0e0;
+  background: #e05252;
   color: #111111;
 }
 
@@ -53,8 +52,8 @@ window#waybar.empty #window {
   padding: 0.25rem 0.6rem;
   margin: 0.3rem 0.25rem;
   border-radius: 6px;
-  background: rgba(40, 40, 40, 0.4);
-  color: #d0d0d0;
+  background: rgba(42, 26, 74, 0.35);
+  color: #c8f9ff;
 }
 
 #clock:hover,
@@ -62,7 +61,7 @@ window#waybar.empty #window {
 #backlight:hover,
 #battery:hover,
 #network:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(77, 232, 224, 0.12);
   color: #ffffff;
 }
 
@@ -76,23 +75,23 @@ window#waybar.empty #window {
 }
 
 #pulseaudio.muted {
-  color: #7a7a7a;
-  background: rgba(40, 40, 40, 0.25);
+  color: #5a6b70;
+  background: rgba(42, 26, 74, 0.2);
 }
 
 #custom-power {
-  background: rgba(40, 40, 40, 0.4);
-  color: #e0e0e0;
+  background: rgba(42, 26, 74, 0.35);
+  color: #4de8e0;
 }
 
 #custom-power:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  background: rgba(224, 82, 82, 0.15);
+  color: #ff6b6b;
 }
 
 tooltip {
-  background: rgba(20, 20, 20, 0.95);
-  border: 1px solid #8a8a8a;
+  background: rgba(10, 10, 15, 0.95);
+  border: 1px solid rgba(77, 232, 224, 0.5);
   color: #ffffff;
   border-radius: 6px;
 }
