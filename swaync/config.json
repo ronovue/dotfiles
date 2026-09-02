@@ -1,4 +1,24 @@
 {
-    "timeout": 2,
-    "timeout-low": 2
+    "control-center-positionY": "top",
+    "control-center-positionX": "center",
+    "fit-to-screen": false,
+    "control-center-width": 900,
+    "control-center-height": 700,
+    "timeout": 1,
+    "timeout-low": 1,
+    "timeout-critical": 1,
+    "widgets": [
+        "title",
+        "dnd",
+        "notifications"
+    ],
+    "widget-config": {
+        "title": {
+            "text": "Notifications",
+            "clear-all-button": true
+        },
+        "dnd": {
+            "text": "Do Not Disturb"
+        }
+    }
 }
