@@ -7,7 +7,6 @@
 
   environment.systemPackages = with pkgs; [
     git
-    fastfetch
     kitty
     gedit
     hyprpaper
@@ -33,8 +32,13 @@
     playerctl
     pavucontrol
     chromium
+    vim
+    unzip
+    python314
+    waydroid
+    pfetch
   ];
-  
+ 
   programs.hyprland.enable = true;
   programs.firefox.enable = true;
   programs.waybar.enable = true;
@@ -46,7 +50,9 @@
   services.tumbler.enable = true;
   services.udisks2.enable = true;
   services.pipewire.enable = true;
-
+  services.libinput.enable = true;
+  
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
@@ -77,8 +83,8 @@
     enable = true;
     defaultFonts = {
     monospace = [ "JetBrainsMono Nerd Font" ];
-    sansSerif = [ "JetBrainsMono Nerd Font" ];
-    serif = [ "JetBrainsMono Nerd Font" ];
+    sansSerif = [ "Inter" ];
+    serif = [ "Inter" ];
     emoji = [ "Noto Color Emoji" ];
     };
   };
