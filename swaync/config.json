@@ -4,9 +4,10 @@
     "fit-to-screen": false,
     "control-center-width": 900,
     "control-center-height": 700,
-    "timeout": 1,
-    "timeout-low": 1,
-    "timeout-critical": 1,
+    "notification-grouping": false,
+    "timeout": 3,
+    "timeout-low": 3,
+    "timeout-critical": 3,
     "widgets": [
         "title",
         "dnd",
