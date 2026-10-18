@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  stableNixpkgs = import (builtins.fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-26.05.tar.gz") {};
+in
 {
   imports = [
     /etc/nixos/hardware-configuration.nix
@@ -37,8 +40,18 @@
     python314
     waydroid
     pfetch
+    spotify
+    libreoffice
+    evince
+    stableNixpkgs.mysql-workbench
+    gpu-screen-recorder
+    vscode-fhs
+    bucklespring-libinput
+    hyprlandPlugins.hyprspace
   ];
- 
+   
+  nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = [ "nix-command" ];
   programs.hyprland.enable = true;
   programs.firefox.enable = true;
   programs.waybar.enable = true;
@@ -51,6 +64,14 @@
   services.udisks2.enable = true;
   services.pipewire.enable = true;
   services.libinput.enable = true;
+  
+  services.mysql = {
+  enable = true;
+  package = pkgs.mysql84;
+};
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.login.enableGnomeKeyring = true;
+  
   
   boot.kernelPackages = pkgs.linuxPackages_latest;
   networking.hostName = "nixos";
@@ -68,7 +89,7 @@
   
   users.users.ronak = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "input" ];
     shell = pkgs.zsh;
   };
 
@@ -103,9 +124,10 @@
     shellAliases = {
       config = "gedit /etc/nixos/configuration.nix";
       rebuild = "sudo nixos-rebuild switch";
+      sql = "GTK_THEME=Adwaita mysql-workbench";
     };
     promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
   };
-
+ 
   system.stateVersion = "26.05";
 }
