@@ -20,25 +20,55 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice-Right 24")
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("dbus-update-activation-environment --systemd --all")
-    hl.exec_cmd("nm-applet & blueman-applet")
+    hl.exec_cmd("nm-applet")
+    hl.exec_cmd("blueman-applet")
+    hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
     hl.exec_cmd("hyprpaper")
-    hl.exec_cmd("waybar")
     hl.exec_cmd("sleep 8 && swaync")
     hl.exec_cmd("sleep 30 && hypridle")
 end)
 
+hl.layer_rule({
+    match = { namespace = "waybar" },
+    name = "waybar-blur",
+    blur = true,
+    ignore_alpha = 0.1,
+})
+
+hl.layer_rule({
+    match = { namespace = "swaync-control-center" },
+    name = "swaync-cc-blur",
+    blur = true,
+    ignore_alpha = 0.1,
+})
+
+hl.layer_rule({
+    match = { namespace = "swaync-notification-window" },
+    name = "swaync-notif-blur",
+    blur = true,
+    ignore_alpha = 0.1,
+})
+
+hl.layer_rule({
+    match = { namespace = "wofi" },
+    name = "wofi-blur",
+    blur = true,
+    ignore_alpha = 0.1,
+})
+
 hl.config({
     general = {
         gaps_in = 4,
-        gaps_out = 15,
+        gaps_out = 4,
         border_size = 4,
         resize_on_border = true,
         allow_tearing = false,
         layout = "master",
-        col = {
-            active_border = { colors = { "rgba(2FA8A0FF)", "rgba(1A0F2EFF)" }, angle = 135 },
-            inactive_border = "rgba(3A2A5A88)",
-        },
+col = {
+--    active_border = { colors = { "rgba(E08AA0FF)", "rgba(7FA3D6FF)" }, angle = 180 },
+--    inactive_border = "rgba(161923AA)",
+active_border = { colors = { "rgba(7FA3D6FF)" }, angle = 180 },
+},
     },
 })
 
@@ -46,8 +76,8 @@ hl.config({
     decoration = {
         rounding = 10,
         rounding_power = 2,
-        active_opacity = 1,
-        inactive_opacity = 0.99,
+        active_opacity = 0.95,
+        inactive_opacity = 0.85,
         shadow = {
             enabled = true,
             range = 2,
@@ -141,6 +171,7 @@ hl.bind(mainMod .. " + " .. "L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + " .. "W", hl.dsp.exec_cmd("sh -c 'pgrep waybar && pkill waybar || waybar'"))
 hl.bind(mainMod .. " + " .. "I", hl.dsp.exec_cmd("~/.config/hypr/toggle-idle.sh"))
 hl.bind(mainMod .. " + " .. "N", hl.dsp.exec_cmd("sh -c 'pgrep gammastep && pkill gammastep || gammastep -O 3500'"))
+hl.bind(mainMod .. " + " .. "B", hl.dsp.exec_cmd("sh -c 'pgrep buckle && pkill buckle || buckle'"))
 
 hl.bind(mainMod .. " + " .. "left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + " .. "right", hl.dsp.focus({ direction = "right" }))
@@ -179,10 +210,11 @@ hl.bind(mainMod .. " + " .. "mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + " .. "mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "F", hl.dsp.window.fullscreen())
-hl.bind(mainMod .. " + ALT + F", hl.dsp.window.fullscreen_state({ internal = 0, client = 2 }))
+hl.bind(mainMod .. " + ALT + F", hl.dsp.window.fullscreen_state({ internal = 0, client = 2, action = "toggle" }))
 hl.bind(mainMod .. " + " .. "T", hl.dsp.exec_cmd("hyprctl keyword general:layout master"))
 hl.bind(mainMod .. " + " .. "Y", hl.dsp.exec_cmd("hyprctl keyword general:layout dwindle"))
-
+hl.bind(mainMod .. " + " .. "B", hl.dsp.exec_cmd("bluetoothctl power on"))
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("bluetoothctl power off"))
 hl.bind(mainMod .. " + " .. "D", hl.dsp.exec_cmd("swaync-client --reload-config| swaync-client -t"))
 
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true })
@@ -221,3 +253,20 @@ hl.window_rule({
     },
     no_focus = true,
 })
+
+hl.window_rule({
+    name = "firefox",
+    match = {
+        class = "firefox",
+    },
+    workspace = "2 silent",
+})
+
+hl.window_rule({
+    name = "Whatsapp",
+    match = {
+        class = "chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default",
+    },
+    workspace = "3 silent",
+})
+
