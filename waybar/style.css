@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-  background: rgba(10, 10, 15, 0.8);
+  background: transparent;
   border: none;
   transition: background-color 0.3s ease;
 }
@@ -19,25 +19,25 @@ window#waybar.empty #window {
 #workspaces button {
   padding: 0.20rem 0.6rem;
   margin: 0.3rem 0.25rem;
-  border-radius: 6px;
+  border-radius: 12px;
   border: none;
-  background: rgba(42, 26, 74, 0.35);
-  color: #8fb8c9;
+  background: rgba(75, 84, 112, 0.55);
+  color: #8d96b0;
 }
 
 #workspaces button:hover {
-  background: rgba(77, 232, 224, 0.12);
-  border: 1px solid rgba(77, 232, 224, 0.5);
+  background: rgba(115, 125, 158, 0.6);
+  border: 1px solid rgba(160, 170, 200, 0.4);
   color: #ffffff;
 }
 
 #workspaces button.active {
-  background: #8FCDE0;
-  color: #0a0a0f;
+  background: #9ca4bf;
+  color: #161923;
 }
 #workspaces button.urgent {
-  background: #e05252;
-  color: #111111;
+  background: #be7082;
+  color: #161923;
 }
 
 #clock,
@@ -51,9 +51,9 @@ window#waybar.empty #window {
 #custom-power {
   padding: 0.25rem 0.6rem;
   margin: 0.3rem 0.25rem;
-  border-radius: 6px;
-  background: rgba(42, 26, 74, 0.35);
-  color: #c8f9ff;
+  border-radius: 12px;
+  background: rgba(75, 84, 112, 0.55);
+  color: #c3c8da;
 }
 
 #clock:hover,
@@ -61,37 +61,37 @@ window#waybar.empty #window {
 #backlight:hover,
 #battery:hover,
 #network:hover {
-  background: rgba(77, 232, 224, 0.12);
+  background: rgba(115, 125, 158, 0.6);
   color: #ffffff;
 }
 
 #battery.warning {
-  color: #f2c14e;
+  color: #d4b483;
 }
 
 #battery.critical {
-  color: #e05252;
-  background: rgba(224, 82, 82, 0.15);
+  color: #c9788a;
+  background: rgba(160, 85, 102, 0.45);
 }
 
 #pulseaudio.muted {
-  color: #5a6b70;
-  background: rgba(42, 26, 74, 0.2);
+  color: #5c6378;
+  background: rgba(75, 84, 112, 0.3);
 }
 
 #custom-power {
-  background: rgba(42, 26, 74, 0.35);
-  color: #4de8e0;
+  background: rgba(75, 84, 112, 0.55);
+  color: #aab2cc;
 }
 
 #custom-power:hover {
-  background: rgba(224, 82, 82, 0.15);
-  color: #ff6b6b;
+  background: rgba(160, 85, 102, 0.45);
+  color: #e6a0ae;
 }
 
 tooltip {
-  background: rgba(10, 10, 15, 0.95);
-  border: 1px solid rgba(77, 232, 224, 0.5);
-  color: #ffffff;
+  background: rgba(20, 22, 31, 0.95);
+  border: 1px solid rgba(160, 170, 200, 0.4);
+  color: #e6e9f2;
   border-radius: 6px;
 }
