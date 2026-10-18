@@ -1,23 +1,95 @@
 .control-center {
-    background: rgba(15, 15, 15, 0.95);
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.08);
-}
-
-.notification {
-    background: rgba(15, 15, 15, 0.95);
-    border-radius: 8px;
-    color: #d0d0d0;
-    padding: 8px;
-    margin: 4px;
+    background: rgba(12, 12, 12, 0.6);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .blank-window {
     background: transparent;
 }
 
-.notification-content {
+.notification-group {
+    background: transparent;
+}
+
+.notification-row {
+    background: transparent;
+    outline: none;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+    background: transparent;
+}
+
+.notification-background {
+    background: transparent;
+    box-shadow: none;
+}
+
+.notification {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: none;
     color: #d0d0d0;
+    padding: 0;
+    margin: 5px 5px;
+    min-height: 44px;
+}
+
+.control-center .notification {
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+}
+
+.notification-content {
+    background: transparent;
+    color: #d0d0d0;
+    padding: 8px 14px;
+    border-radius: 12px;
+}
+
+.notification-default-action,
+.notification-action {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 12px;
+    padding: 0;
+    margin: 0;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+.summary {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.body {
+    color: #d0d0d0;
+    font-size: 14px;
+}
+
+.time {
+    color: #a0a0a0;
+    font-size: 13px;
+}
+
+.close-button {
+    background: rgba(255, 255, 255, 0.08);
+    color: #d0d0d0;
+    border-radius: 12px;
+}
+
+.close-button:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
 }
 
 .widget-title {
@@ -26,15 +98,17 @@
 }
 
 .widget-title button {
-    background: rgba(40, 40, 40, 0.4);
+    background: rgba(255, 255, 255, 0.08);
     color: #d0d0d0;
-    border-radius: 6px;
+    border-radius: 12px;
+    padding: 4px 10px;
+}
+
+.widget-title button:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
 }
 
 .widget-dnd {
     color: #d0d0d0;
-}
-
-.notification-group {
-   background: transparent;
 }
